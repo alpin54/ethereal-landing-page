@@ -1,0 +1,65 @@
+@import "src/core/styles/_assets.scss";
+
+.cta {
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	padding: 128px 0 64px;
+	@include large {
+		padding: 112px 0 56px;
+	}
+	@include medium {
+		padding: 96px 0 48px;
+	}
+	@include small {
+		padding: 80px 0 40px;
+	}
+	@include x-small {
+		padding: 64px 0 32px;
+	}
+}
+.inner {
+	display: flex;
+	height: 100vh;
+	color: color(white);
+	@include radius(3);
+	overflow: hidden;
+	transform: translate(0);
+}
+.text {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	flex: 0 0 auto;
+	width: 50%;
+	padding: 64px;
+	background-color: color(black);
+}
+.img {
+	position: fixed;
+	top: -10%;
+	right: 0;
+	width: 50%;
+	height: 120vh;
+	&Wrapper {
+		position: relative;
+		width: 100%;
+		height: 100%;
+	}
+	&El {
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+}
+.subtitle {
+	@include font-size(h3);
+}
+.title {
+	@include font-size(h1);
+	margin-bottom: 24px;
+}

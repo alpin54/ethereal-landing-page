@@ -1,0 +1,114 @@
+@import "src/core/styles/_assets.scss";
+
+.footer {
+	position: relative;
+	width: 100%;
+	z-index: zi(footer);
+	background-color: color(grey, 2);
+	padding: 64px 80px 32px 0;
+	overflow: hidden;
+	@include large {
+		padding: 56px 0 28px;
+	}
+	@include medium {
+		padding: 48px 0 24px;
+	}
+	@include small {
+		padding: 32px 0 16px;
+	}
+}
+.grid {
+	display: flex;
+	gap: 80px;
+}
+.item {
+	display: flex;
+	align-items: flex-start;
+	flex-direction: column;
+	&:last-child {
+		margin-left: auto;
+	}
+	button {
+		background-color: color(primary) !important;
+	}
+}
+.link {
+	display: inline-block;
+	text-decoration: none;
+	@include font-size(h6);
+	margin-bottom: 8px;
+	transition: color 0.3s ease;
+	&:hover {
+		color: color(primary);
+		border-color: color(primary);
+	}
+	&:last-child {
+		padding-bottom: 4px;
+		margin-bottom: 0;
+		transition: all 0.3s ease;
+		border-bottom: 1px solid color(black);
+		&:hover {
+			border-color: color(primary);
+		}
+	}
+}
+.nav {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	&Item {
+		margin-bottom: 8px;
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+	&Link {
+		display: block;
+		text-decoration: none;
+		@include font-size(h6);
+		margin-bottom: 8px;
+		transition: color 0.3s ease;
+		&:hover {
+			color: color(primary);
+		}
+	}
+}
+.social {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	&Link {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		text-decoration: none;
+		@include font-size(h4);
+		transition: background-color 0.3s ease, color 0.3s ease;
+		&:hover {
+			color: color(white);
+		}
+	}
+	@include sosmed("facebook", "instagram", "youtube", "twitter", "linkedin");
+}
+.logo {
+	margin-top: 120px;
+	width: 100%;
+	&Img {
+		display: block;
+		width: 100%;
+		height: auto;
+		transition: all 0.3s ease;
+	}
+}
+.copyright {
+	border-top: 1px solid color(grey, 3);
+	margin-top: 30px;
+	padding-top: 30px;
+	&Text {
+		@include font-size(small);
+		margin-bottom: 0;
+	}
+}

@@ -1,0 +1,107 @@
+@import "src/core/styles/_assets.scss";
+
+.feature {
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	padding: 128px 0;
+	background-color: color(grey, 2);
+	@include large {
+		padding: 112px 0;
+	}
+	@include medium {
+		padding: 96px 0;
+	}
+	@include small {
+		padding: 80px 0;
+	}
+	@include x-small {
+		padding: 64px 0;
+	}
+}
+.head {
+	display: flex;
+	align-items: center;
+	margin-bottom: 64px;
+	@include large {
+		align-items: flex-start;
+		flex-direction: column;
+		margin-bottom: 56px;
+	}
+	@include medium {
+		margin-bottom: 48px;
+	}
+	@include small {
+		margin-bottom: 40px;
+	}
+	@include x-small {
+		margin-bottom: 32px;
+	}
+}
+.title {
+	max-width: 620px;
+	padding-right: 40px;
+	margin-bottom: 0;
+	@include large {
+		@include font-size(h2);
+		margin-bottom: 24px;
+	}
+	@include medium {
+		max-width: initial;
+		@include font-size(h2-a);
+	}
+	@include small {
+		@include font-size(h3);
+	}
+}
+.desc {
+	flex: 1;
+	@include font-size(h5);
+	margin-bottom: 0;
+	@include x-small {
+		@include font-size(h6);
+	}
+}
+.body {
+	display: flex;
+	gap: 40px;
+	@include large {
+		gap: 32px;
+		flex-wrap: nowrap;
+		@include scroll("x", "touch", "hide");
+		margin-left: -32px;
+		margin-right: -32px;
+		padding-left: 32px;
+		padding-right: 32px;
+	}
+	@include small {
+		gap: 24px;
+		margin-left: -24px;
+		margin-right: -24px;
+		padding-left: 24px;
+		padding-right: 24px;
+	}
+	@include retina {
+		gap: 16px;
+		margin-left: -16px;
+		margin-right: -16px;
+		padding-left: 16px;
+		padding-right: 16px;
+	}
+}
+.item {
+	width: 33.3333%;
+	@include large {
+		flex: 0 0 auto;
+		width: 400px;
+	}
+	@include small {
+		width: 360px;
+	}
+	@include x-small {
+		width: 320px;
+	}
+	@include retina {
+		width: 280px;
+	}
+}

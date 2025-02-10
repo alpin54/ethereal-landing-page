@@ -1,0 +1,48 @@
+{
+	"compilerOptions": {
+		"target": "ES2017",
+		"lib": ["dom", "dom.iterable", "esnext"],
+		"allowJs": true,
+		"skipLibCheck": true,
+		"strict": true,
+		"noEmit": true,
+		"esModuleInterop": true,
+		"module": "esnext",
+		"moduleResolution": "bundler",
+		"resolveJsonModule": true,
+		"isolatedModules": true,
+		"jsx": "preserve",
+		"incremental": true,
+		"plugins": [
+			{
+				"name": "next"
+			}
+		],
+		"baseUrl": "./",
+		"paths": {
+			//-- CORE
+			"@configs/*": ["src/core/configs/*"],
+			"@hooks/*": ["src/core/hooks/*"],
+			"@models/*": ["src/core/models/*"],
+			"@persists/*": ["src/core/persists/*"],
+			"@states/*": ["src/core/states/*"],
+			"@styles/*": ["src/core/styles/*"],
+			"@utils/*": ["src/core/utils/*"],
+
+			//-- INFRASTRUCTURE
+			"@api/*": ["src/infrastructure/api/*"],
+			"@widgets/*": ["src/infrastructure/widgets/*"],
+
+			//-- PRESENTATION COMPONENTS
+			"@atoms/*": ["src/presentation/components/atoms/*"],
+			"@molecules/*": ["src/presentation/components/molecules/*"],
+			"@organisms/*": ["src/presentation/components/organisms/*"],
+			"@modules/*": ["src/presentation/modules/*"],
+
+			// -- PUBLIC
+			"@public/*": ["public/*"]
+		}
+	},
+	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+	"exclude": ["node_modules"]
+}

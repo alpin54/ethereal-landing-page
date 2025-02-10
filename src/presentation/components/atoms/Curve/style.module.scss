@@ -1,0 +1,11 @@
+@import "src/core/styles/_assets.scss";
+
+.svgCurve {
+	position: absolute;
+	top: 0;
+	left: -99px;
+	width: 100px;
+	height: 100%;
+	fill: color(white);
+	stroke: none;
+}

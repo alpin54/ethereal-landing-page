@@ -1,0 +1,29 @@
+@import "src/core/styles/_assets.scss";
+
+.item {
+	position: relative;
+	display: flex;
+	align-items: center;
+}
+.link {
+	text-decoration: none;
+	@include font-size(h3);
+	transition: color 0.3s ease;
+	@include small {
+		@include font-size(h4);
+	}
+	&:hover {
+		color: color(primary);
+	}
+}
+.indicator {
+	width: 10px;
+	height: 10px;
+	background-color: color(primary);
+	border-radius: 50%;
+	position: absolute;
+	left: -32px;
+	@include small {
+		left: -24px;
+	}
+}
