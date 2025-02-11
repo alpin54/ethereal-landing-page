@@ -1,19 +1,11 @@
 // -- config
 import DefaultSchema from "@configs/schema";
 
-interface SchemaDynamicData {
-  page?: string;
-}
-
-interface SchemaDynamicReturn {
-  webpage: {
-    url: string;
-    name: string;
-  };
-}
+// -- interface
+import { ISchemaDynamicData, ISchemaDynamicResult } from "./type";
 
 // -- schemaDynamic
-const schemaDynamic = (data: SchemaDynamicData): SchemaDynamicReturn => {
+const schemaDynamic = (data: ISchemaDynamicData): ISchemaDynamicResult => {
   return {
     webpage: {
       url: DefaultSchema.webpage.url + (data?.page ? data.page.toLowerCase() : ""),

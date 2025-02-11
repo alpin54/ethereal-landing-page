@@ -2,6 +2,7 @@
 import SchemaDefault from "@utils/schema/default";
 import schemaDynamic from "@utils/schema/dynamic";
 
+// -- interface
 interface SchemaType {
   dynamic: (data: Record<string, unknown>) => unknown;
 }

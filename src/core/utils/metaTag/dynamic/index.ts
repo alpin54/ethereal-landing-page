@@ -1,47 +1,11 @@
 // -- config
 import DefaultSEO from "@configs/SEO";
 
-interface MetaTagDynamicData {
-	page?: string;
-	link?: string;
-	ogImage?: string;
-	title?: string;
-	twitterImage?: string;
-}
-
-interface OpenGraph {
-	locale: string;
-	type: string;
-	siteName: string;
-	title: string;
-	description: string;
-	url: string;
-	images: { url: string; alt: string }[];
-}
-
-interface Twitter {
-	card: string;
-	site: string;
-	siteId: string;
-	creator: string;
-	title: string;
-	description: string;
-	images: string[];
-}
-
-interface MetaTagDynamicResult {
-	title: string;
-	description: string;
-	keywords: string;
-	alternates: {
-		canonical: string;
-	};
-	openGraph?: OpenGraph;
-	twitter?: Twitter;
-}
+// -- interface
+import { IMetaTagDynamicData, IMetaTagDynamicResult } from "./type";
 
 // -- metaTagDynamic
-const metaTagDynamic = (data: MetaTagDynamicData): MetaTagDynamicResult => {
+const metaTagDynamic = (data: IMetaTagDynamicData): IMetaTagDynamicResult => {
 	return {
 		title: data?.page
 			? data.page + " | " + DefaultSEO.title

@@ -1,21 +1,10 @@
 // -- config
 import DefaultSEO from "@configs/SEO";
 
-interface MetaTagIcon {
-	url: string;
-	sizes: string;
-	type?: string;
-}
-
-interface MetaTagIconsResult {
-	shortcut: string;
-	icon: MetaTagIcon[];
-	apple: MetaTagIcon[];
-	other: { rel: string, url: string }[];
-}
+import { IMetaTagIconsResult } from "./type";
 
 // -- metaTagIcons
-const metaTagIcons = (): MetaTagIconsResult => {
+const metaTagIcons = (): IMetaTagIconsResult => {
 	// -- shortcut
 	const shortcut = `${DefaultSEO.icons.src}${DefaultSEO.icons.shortcut}`;
 

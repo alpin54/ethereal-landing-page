@@ -1,8 +1,10 @@
 // -- config
 import DefaultSchema from "@configs/schema";
-import { DefaultSchemaType } from "@configs/schema/type";
 
-const schema: DefaultSchemaType = DefaultSchema;
+// -- interface
+import { IDefaultSchemaType } from "@configs/schema/type";
+
+const schema: IDefaultSchemaType = DefaultSchema;
 
 const SchemaDefault: React.FC = () => {
 	return (

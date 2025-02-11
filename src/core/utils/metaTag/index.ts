@@ -4,6 +4,7 @@ import metaTagViewport from "@utils/metaTag/viewport";
 import MetaTagDefault from "@utils/metaTag/default";
 import metaTagDynamic from "@utils/metaTag/dynamic";
 
+// -- interface
 interface MetaTag {
 	data: typeof metaTagData;
 	viewport: typeof metaTagViewport;

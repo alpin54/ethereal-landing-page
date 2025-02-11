@@ -1,18 +1,11 @@
 // -- config
 import DefaultSEO from "@configs/SEO";
 
-interface Viewport {
-	width: string;
-	initialScale: number;
-	userScalable: boolean;
-}
-
-interface MetaTagViewportResult extends Viewport {
-	themeColor: string;
-}
+// -- interface
+import { IMetaTagViewportResult } from "./type";
 
 // -- metaTagViewport
-const metaTagViewport = (): MetaTagViewportResult => {
+const metaTagViewport = (): IMetaTagViewportResult => {
 	return {
 		...DefaultSEO.viewport,
 		themeColor: DefaultSEO.themeColor,

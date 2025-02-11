@@ -4,40 +4,19 @@ import DefaultSEO from "@configs/SEO";
 // -- utils
 import metaTagIcons from "@utils/metaTag/data/icons";
 
-// Define the Author interface
-interface Author {
-  name: string;
-}
+// -- interface
+import { IAuthor, IRobots, IOtherMetaTags } from "./type";
 
-// Define the Robots interface
-interface Robots {
-  index: boolean;
-  follow: boolean;
-  googleBot?: Robots; // Make googleBot optional if it's not always present
-}
-
-// Define the OtherMetaTags interface
-interface OtherMetaTags {
-  "application-name": string;
-  "mobile-web-app-capable": "yes" | "no";
-  "msapplication-TileColor": string;
-  "msapplication-TileImage": string;
-  "apple-mobile-web-app-title": string;
-  "apple-mobile-web-app-capable": "yes" | "no";
-  "apple-mobile-web-app-status-bar-style": string;
-}
-
-// Define the MetaTagDataResult interface
-interface MetaTagDataResult {
-  authors: Author[];
-  robots: Robots;
+interface IMetaTagDataResult {
+  authors: IAuthor[];
+  robots: IRobots;
   manifest: string;
   icons: ReturnType<typeof metaTagIcons>;
-  other: OtherMetaTags;
+  other: IOtherMetaTags;
 }
 
 // -- metaTagData
-const metaTagData = (): MetaTagDataResult => {
+const metaTagData = (): IMetaTagDataResult => {
   return {
     authors: [
       {
@@ -50,7 +29,6 @@ const metaTagData = (): MetaTagDataResult => {
       googleBot: {
         index: DefaultSEO.robots.index,
         follow: DefaultSEO.robots.follow,
-        // Ensure googleBot is defined if required
       },
     },
     manifest: DefaultSEO.manifest,
@@ -58,7 +36,7 @@ const metaTagData = (): MetaTagDataResult => {
     other: {
       // -- android add to home screen
       "application-name": DefaultSEO.siteName,
-      "mobile-web-app-capable": DefaultSEO.siteCapable ? "yes" : "no", // Ensure siteCapable exists
+      "mobile-web-app-capable": DefaultSEO.siteCapable ? "yes" : "no",
 
       // -- windows microsoft
       "msapplication-TileColor": DefaultSEO.themeColor,
@@ -66,7 +44,7 @@ const metaTagData = (): MetaTagDataResult => {
 
       // -- apple add to home screen
       "apple-mobile-web-app-title": DefaultSEO.siteName,
-      "apple-mobile-web-app-capable": DefaultSEO.siteCapable ? "yes" : "no", // Ensure siteCapable exists
+      "apple-mobile-web-app-capable": DefaultSEO.siteCapable ? "yes" : "no",
       "apple-mobile-web-app-status-bar-style": DefaultSEO.themeColor,
     },
   };
