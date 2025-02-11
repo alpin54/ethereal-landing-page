@@ -35,7 +35,7 @@ const HeroBanner: React.FC = () => {
 		target: container,
 		offset: ["start start", "end start"],
 	});
-	const y = useTransform(scrollYProgress, [0, 1], ["0vh", "50vh"]);
+	const y = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 	const [paddingBottom, setPaddingBottom] = useState<number>(0);
 
 	useEffect(() => {
@@ -54,7 +54,7 @@ const HeroBanner: React.FC = () => {
 	}, [index]);
 
 	return (
-		<section className={style.banner} id="hero-banner" ref={container}>
+		<section className={style.banner} id="hero-banner">
 			<div className="container">
 				<motion.div style={{ y }} className={style.img}>
 					<LazyLoadImage

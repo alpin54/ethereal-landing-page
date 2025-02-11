@@ -35,6 +35,8 @@
 	@include small {
 		left: 24px;
 		bottom: 24px;
+		width: 48px;
+		height: 48px;
 	}
 	@include retina {
 		left: 16px;
@@ -55,4 +57,8 @@
 	font-size: inherit;
 	line-height: 1 !important;
 	transition: 0.4s cubic-bezier(0.2, 0.6, 0.3, 1.1);
+	@include small {
+		top: 8px;
+		left: 8px;
+	}
 }
