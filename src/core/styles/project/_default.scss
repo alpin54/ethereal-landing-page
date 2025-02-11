@@ -8,6 +8,7 @@ body {
 	background-color: color(white);
 	color: color(black);
 	@include font-size(body);
+	transition: background-color 0.3s ease-in-out;
 	&.rm-scroll {
 		overflow: hidden;
 		touch-action: none;
@@ -18,6 +19,15 @@ body {
 		*::after {
 			transition: none !important;
 		}
+	}
+	.light & {
+		background-color: color(white);
+		color: color(black);
+	}
+
+	.dark & {
+		background-color: color(black);
+		color: color(white);
 	}
 }
 

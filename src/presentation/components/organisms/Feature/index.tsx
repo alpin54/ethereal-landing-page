@@ -1,3 +1,5 @@
+"use client";
+
 // -- molecules
 import FeatureItem from "@molecules/FeatureItem";
 
@@ -33,7 +35,7 @@ const feature: FeatureList[] = [
 ];
 const FeatureSection: React.FC = () => {
 	return (
-		<section className={style.feature}>
+		<section className={style.feature} id="features">
 			<div className="container">
 				<div className={style.head}>
 					<h2 className={style.title}>Unlock a World Beyond the Ordinary</h2>

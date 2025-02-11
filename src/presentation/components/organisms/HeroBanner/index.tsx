@@ -1,3 +1,5 @@
+"use client";
+
 // -- core
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { useState, useEffect, useRef } from "react";
@@ -8,11 +10,11 @@ import {
 	useTransform,
 } from "framer-motion";
 
-// -- atoms
-import Button from "@atoms/Button";
-
 // -- style
 import style from "./style.module.scss";
+
+// -- atoms
+import Button from "@atoms/Button";
 
 const textItems: string[] = [
 	"Art & Finance",
@@ -40,13 +42,13 @@ const variants = {
 const HeroBanner: React.FC = () => {
 	const [index, setIndex] = useState<number>(0);
 	const container = useRef<HTMLDivElement | null>(null);
-	const taglineRef = useRef<HTMLHeadingElement | null>(null); // Create a ref for the h2 element
+	const taglineRef = useRef<HTMLHeadingElement | null>(null);
 	const { scrollYProgress } = useScroll({
 		target: container,
 		offset: ["start start", "end start"],
 	});
 	const y = useTransform(scrollYProgress, [0, 1], ["0vh", "50vh"]);
-	const [paddingBottom, setPaddingBottom] = useState<number>(0); // State to hold the padding value
+	const [paddingBottom, setPaddingBottom] = useState<number>(0);
 
 	useEffect(() => {
 		const timer = setTimeout(() => {
@@ -58,10 +60,10 @@ const HeroBanner: React.FC = () => {
 
 	useEffect(() => {
 		if (taglineRef.current) {
-			const height = taglineRef.current.offsetHeight; // Get the height of the h2 element
-			setPaddingBottom(height); // Set the padding based on the height
+			const height = taglineRef.current.offsetHeight;
+			setPaddingBottom(height);
 		}
-	}, [index]); // Re-run when the index changes
+	}, [index]);
 
 	return (
 		<section className={style.banner} id="hero-banner" ref={container}>

@@ -1,3 +1,5 @@
+"use client";
+
 // -- core
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { useRef } from "react";
@@ -15,7 +17,7 @@ const Cta: React.FC = () => {
 		target: container,
 		offset: ["start end", "end start"],
 	});
-	const y = useTransform(scrollYProgress, [0, 1], ["-20%", "20%"]);
+	const y = useTransform(scrollYProgress, [0, 1], ["-30%", "30%"]);
 
 	return (
 		<section className={style.cta} id="cta">
@@ -33,7 +35,7 @@ const Cta: React.FC = () => {
 					<div className={style.img}>
 						<motion.div style={{ y }} className={style.imgWrapper}>
 							<LazyLoadImage
-								src="/bg/cta.jpg"
+								src="/bg/cta-2.jpg"
 								alt="hero-banner"
 								className={style.imgEl}
 								width={638}

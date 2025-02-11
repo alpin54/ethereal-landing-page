@@ -2,6 +2,7 @@
 [class*=" ei-"] {
 	/* use !important to prevent issues with browser extensions that change fonts */
 	font-family: "ethereal-icon" !important;
+	speak: never;
 	font-style: normal;
 	font-weight: normal;
 	font-variant: normal;
@@ -13,6 +14,12 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
+.ei-moon:before {
+	content: "\e907";
+}
+.ei-sun:before {
+	content: "\e908";
+}
 .ei-facebook:before {
 	content: "\e900";
 }

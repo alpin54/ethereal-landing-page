@@ -1,12 +1,14 @@
 @import "src/core/styles/_assets.scss";
 
 .btn {
-	display: inline-block;
-	vertical-align: middle;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
 	min-width: 240px;
 	padding: 16px 32px;
 	text-decoration: none;
 	outline: 0;
+	border: 0;
 	cursor: pointer;
 	text-align: center;
 	overflow: hidden;
@@ -24,6 +26,7 @@
 		padding: 12px 24px;
 	}
 	@include small {
+		min-width: 180px;
 		@include font-size(h6);
 	}
 }

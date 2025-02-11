@@ -7,8 +7,11 @@
 	background-color: color(grey, 2);
 	padding: 64px 80px 32px 0;
 	overflow: hidden;
+	:global(.dark) & {
+		background-color: color(grey, 5);
+	}
 	@include large {
-		padding: 56px 0 28px;
+		padding: 56px 80px 28px 0;
 	}
 	@include medium {
 		padding: 48px 0 24px;
@@ -20,13 +23,32 @@
 .grid {
 	display: flex;
 	gap: 80px;
+	@include large {
+		flex-wrap: wrap;
+		gap: unset;
+	}
 }
 .item {
 	display: flex;
 	align-items: flex-start;
 	flex-direction: column;
+	@include large {
+		flex: 0 0 auto;
+		width: 50%;
+		margin: 8px 0;
+	}
+	@include small {
+		width: 100%;
+		margin: 0 0 24px;
+	}
 	&:last-child {
 		margin-left: auto;
+		@include large {
+			margin-left: 0;
+		}
+		@include small {
+			margin-bottom: 0;
+		}
 	}
 	button {
 		background-color: color(primary) !important;
@@ -47,6 +69,9 @@
 		margin-bottom: 0;
 		transition: all 0.3s ease;
 		border-bottom: 1px solid color(black);
+		:global(.dark) & {
+			border-color: color(white);
+		}
 		&:hover {
 			border-color: color(primary);
 		}
@@ -101,6 +126,9 @@
 		width: 100%;
 		height: auto;
 		transition: all 0.3s ease;
+		:global(.dark) & {
+			filter: invert(1);
+		}
 	}
 }
 .copyright {

@@ -3,12 +3,10 @@ import { motion } from "framer-motion";
 import style from "./style.module.scss";
 
 const Index: React.FC = () => {
-	// Use a state variable to store the window height
 	const [windowHeight, setWindowHeight] = React.useState<number>(
 		window.innerHeight
 	);
 
-	// Update the window height on resize
 	React.useEffect(() => {
 		const handleResize = () => {
 			setWindowHeight(window.innerHeight);

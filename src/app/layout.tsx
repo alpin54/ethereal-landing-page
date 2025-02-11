@@ -1,9 +1,13 @@
+// -- style
+import "@rainbow-me/rainbowkit/styles.css";
+import "@styles/app.scss";
+
+// -- organisms
+import { ThemeProvider } from "@organisms/ThemeProvider";
+
 // -- utils
 import metaTag, { MetaTagDefault } from "@utils/metaTag";
 import { SchemaDefault } from "@utils/schema";
-
-// -- style
-import "@styles/app.scss";
 
 // -- metadata
 const metadata = metaTag.data();
@@ -27,7 +31,14 @@ const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
 
 			{/* -- THE BODY -- */}
 			<body>
-				{children}
+				<ThemeProvider
+					attribute="class"
+					defaultTheme="system"
+					enableSystem
+					disableTransitionOnChange
+				>
+					{children}
+				</ThemeProvider>
 				<SchemaDefault />
 			</body>
 		</html>

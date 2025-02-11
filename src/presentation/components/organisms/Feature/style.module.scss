@@ -6,6 +6,9 @@
 	width: 100%;
 	padding: 128px 0;
 	background-color: color(grey, 2);
+	:global(.dark) & {
+		background-color: color(grey, 5);
+	}
 	@include large {
 		padding: 112px 0;
 	}
@@ -41,6 +44,7 @@
 .title {
 	max-width: 620px;
 	padding-right: 40px;
+	@include font-size(h1);
 	margin-bottom: 0;
 	@include large {
 		@include font-size(h2);

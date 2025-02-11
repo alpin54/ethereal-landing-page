@@ -25,6 +25,13 @@
 	@include radius(3);
 	overflow: hidden;
 	transform: translate(0);
+	@include large {
+		height: 80vh;
+	}
+	@include medium {
+		flex-direction: column-reverse;
+		height: auto;
+	}
 }
 .text {
 	display: flex;
@@ -34,13 +41,44 @@
 	width: 50%;
 	padding: 64px;
 	background-color: color(black);
+	:global(.dark) & {
+		background-color: color(grey, 5);
+	}
+	@include large {
+		padding: 56px 32px;
+	}
+	@include medium {
+		padding: 48px 32px;
+		width: 100%;
+	}
+	@include small {
+		padding: 40px 24px;
+	}
+	@include x-small {
+		padding: 32px 24px;
+	}
+	@include retina {
+		padding: 24px 16px;
+	}
 }
 .img {
 	position: fixed;
-	top: -10%;
+	top: 0;
 	right: 0;
 	width: 50%;
-	height: 120vh;
+	height: 100%;
+	@include medium {
+		position: relative;
+		width: 100%;
+		height: 400px;
+		overflow: hidden;
+	}
+	@include small {
+		height: 320px;
+	}
+	@include x-small {
+		height: 280px;
+	}
 	&Wrapper {
 		position: relative;
 		width: 100%;
@@ -48,18 +86,33 @@
 	}
 	&El {
 		position: absolute;
-		top: 0;
+		top: -10%;
 		left: 0;
 		display: block;
 		width: 100%;
-		height: 100%;
+		height: 150%;
 		object-fit: cover;
+		object-position: 20%;
 	}
-}
-.subtitle {
-	@include font-size(h3);
 }
 .title {
 	@include font-size(h1);
 	margin-bottom: 24px;
+	@include large {
+		@include font-size(h2);
+	}
+	@include medium {
+		@include font-size(h2-a);
+	}
+	@include small {
+		@include font-size(h3);
+	}
+}
+.subtitle {
+	@include font-size(h3);
+	margin-bottom: 0;
+	@include medium {
+		@include font-size(h4);
+		margin-bottom: 16px;
+	}
 }

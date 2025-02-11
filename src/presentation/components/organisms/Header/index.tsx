@@ -9,6 +9,9 @@ import { usePathname } from "next/navigation";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+// -- style
+import style from "./style.module.scss";
+
 // -- utils
 import { menuSlide } from "@utils/animation";
 
@@ -20,9 +23,6 @@ import Magnetic from "@atoms/Magnetic";
 
 // -- molecules
 import HeaderItem from "@molecules/HeaderItem";
-
-// -- style
-import style from "./style.module.scss";
 
 // -- interface
 interface ListData {
