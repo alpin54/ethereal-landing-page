@@ -1,8 +1,12 @@
 "use client";
 
 // -- core
+import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+
+// -- style
+import style from "./style.module.scss";
 
 // -- utils
 import { slide, scale } from "@utils/animation";
@@ -10,23 +14,10 @@ import { slide, scale } from "@utils/animation";
 // -- atoms
 import Magnetic from "@atoms/Magnetic";
 
-// -- style
-import style from "./style.module.scss";
+// -- interface
+import { IHeaderItem } from "./type";
 
-interface Data {
-	title: string;
-	to: string;
-	idx: number;
-}
-
-interface HeaderItemProps {
-	data: Data;
-	isActive: boolean;
-	setIsActive: React.Dispatch<React.SetStateAction<boolean>>;
-	setSelectedIndicator: (to: string) => void;
-}
-
-const HeaderItem: React.FC<HeaderItemProps> = (props) => {
+const HeaderItem: React.FC<IHeaderItem> = (props) => {
 	const { data, isActive, setIsActive, setSelectedIndicator } = props;
 	const { title, to, idx } = data;
 

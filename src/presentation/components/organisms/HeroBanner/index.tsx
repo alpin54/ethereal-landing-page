@@ -1,8 +1,8 @@
 "use client";
 
 // -- core
+import React, { useState, useEffect, useRef } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import { useState, useEffect, useRef } from "react";
 import {
 	AnimatePresence,
 	motion,
@@ -13,31 +13,19 @@ import {
 // -- style
 import style from "./style.module.scss";
 
+// -- utils
+import { slideLoop } from "@utils/animation";
+
 // -- atoms
 import Button from "@atoms/Button";
 
+// -- data
 const textItems: string[] = [
 	"Art & Finance",
 	"Seamless transactions with low fees",
 	"Empower artists and creators",
 	"Secure and transparent platform",
 ];
-
-const variants = {
-	enter: {
-		y: -80,
-		opacity: 0,
-	},
-	center: {
-		zIndex: 1,
-		y: 0,
-		opacity: 1,
-	},
-	exit: {
-		zIndex: 0,
-		opacity: 0,
-	},
-};
 
 const HeroBanner: React.FC = () => {
 	const [index, setIndex] = useState<number>(0);
@@ -85,7 +73,7 @@ const HeroBanner: React.FC = () => {
 					>
 						<AnimatePresence>
 							<motion.span
-								variants={variants}
+								variants={slideLoop}
 								key={index}
 								initial="enter"
 								animate="center"

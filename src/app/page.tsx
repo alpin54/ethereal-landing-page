@@ -9,7 +9,6 @@ import Home from "@modules/Home";
 
 // -- metadata
 const metadata = metaTag.dynamic({
-	page: "Home",
 	link: "http://localhost:3000",
 });
 

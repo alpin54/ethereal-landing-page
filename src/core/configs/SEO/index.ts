@@ -1,14 +1,14 @@
-import { DefaultSEOType } from './type';
+import { IDefaultSEOType } from './type';
 
 // --- DefaultSEO
-const DefaultSEO: DefaultSEOType = {
+const DefaultSEO: IDefaultSEOType = {
 	title: "Ethereal",
 	description: "Description ethereal",
 	keywords: "Ethereal",
 	timeRefresh: 900,
 	siteName: "ethereal",
-	siteDomain: "https://ethereal-psi.vercel.app/",
-	siteURL: "https://ethereal-psi.vercel.app/",
+	siteDomain: "https://ethereal-landing-page.vercel.app",
+	siteURL: "https://ethereal-landing-page.vercel.app",
 	themeColor: "#ff5caa",
 	author: "Alpin",
 	copyright: "© 2025 Ethereal. All rights reserved",

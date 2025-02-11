@@ -25,3 +25,19 @@ export const scale: Variants = {
 	open: { scale: 1, transition: { duration: 0.3 } },
 	closed: { scale: 0, transition: { duration: 0.4 } },
 };
+
+export const slideLoop: Variants = {
+	enter: {
+		y: -80,
+		opacity: 0,
+	},
+	center: {
+		zIndex: 1,
+		y: 0,
+		opacity: 1,
+	},
+	exit: {
+		zIndex: 0,
+		opacity: 0,
+	},
+};

@@ -1,5 +1,8 @@
+// -- core
 import React from "react";
 import { motion } from "framer-motion";
+
+// -- style
 import style from "./style.module.scss";
 
 const Index: React.FC = () => {

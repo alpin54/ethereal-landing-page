@@ -1,7 +1,7 @@
 "use client";
 
 // -- core
-import { useEffect, useLayoutEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
@@ -25,18 +25,17 @@ import Magnetic from "@atoms/Magnetic";
 import HeaderItem from "@molecules/HeaderItem";
 
 // -- interface
-interface ListData {
-	title: string;
-	to: string;
-}
+import { IListData } from "../Header/type";
 
-const navItems: ListData[] = [
+// -- data nav list
+const navItems: IListData[] = [
 	{ title: "Hero", to: "#hero-banner" },
 	{ title: "Features", to: "#features" },
 	{ title: "CTA", to: "#cta" },
 ];
 
-const sosmedList: ListData[] = [
+// -- data sosmed
+const sosmedList: IListData[] = [
 	{ title: "instagram", to: "https://instagram.com" },
 	{ title: "facebook", to: "https://facebook.com" },
 	{ title: "linkedin", to: "https://linkedin.com" },

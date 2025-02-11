@@ -1,7 +1,7 @@
 "use client";
 
 // -- core
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 
 // -- organisms
 import HeroBanner from "@organisms/HeroBanner";

@@ -1,23 +1,23 @@
-export interface Robots {
+export interface IRobots {
 	index: boolean;
 	follow: boolean;
 }
 
-export interface OpenGraph {
+export interface IOpenGraph {
 	enable: boolean;
 	locale: string;
 	type: string;
 	image: string;
 }
 
-export interface Twitter {
+export interface ITwitter {
 	enable: boolean;
 	username: string;
 	card: string;
 	image: string;
 }
 
-export interface Icons {
+export interface IIcons {
 	src: string;
 	shortcut: string;
 	android: number[];
@@ -28,13 +28,13 @@ export interface Icons {
 	};
 }
 
-export interface Viewport {
+export interface IViewport {
 	width: string;
 	initialScale: number;
 	userScalable: boolean;
 }
 
-export interface DefaultSEOType {
+export interface IDefaultSEOType {
 	title: string;
 	description: string;
 	keywords: string;
@@ -45,11 +45,11 @@ export interface DefaultSEOType {
 	themeColor: string;
 	author: string;
 	copyright: string;
-	robots: Robots;
-	openGraph: OpenGraph;
-	twitter: Twitter;
+	robots: IRobots;
+	openGraph: IOpenGraph;
+	twitter: ITwitter;
 	manifest: string;
-	viewport: Viewport;
-	icons: Icons;
+	viewport: IViewport;
+	icons: IIcons;
 	siteCapable: boolean
 }

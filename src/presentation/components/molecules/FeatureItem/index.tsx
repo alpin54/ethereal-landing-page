@@ -1,19 +1,16 @@
 "use client";
 
 // -- core
+import React from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
 // -- style
 import style from "./style.module.scss";
 
 // -- interface
-interface FeatureItemProps {
-	icon: string;
-	title: string;
-	description: string;
-}
+import { IFeatureItem } from "./type";
 
-const FeatureItem: React.FC<FeatureItemProps> = (props) => {
+const FeatureItem: React.FC<IFeatureItem> = (props) => {
 	const { icon, title, description } = props;
 
 	return (

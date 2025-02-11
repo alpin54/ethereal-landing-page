@@ -1,14 +1,14 @@
-import { DefaultSchemaType } from './type';
+import { IDefaultSchemaType } from './type';
 
 // --- DefaultSchema
-const DefaultSchema: DefaultSchemaType = {
+const DefaultSchema: IDefaultSchemaType = {
 	organization: {
 		context: "http://schema.org",
-		id: "https://ethereal-psi.vercel.app#organization",
+		id: "https://ethereal-landing-page.vercel.app#organization",
 		type: "Organization",
 		name: "Ethereal",
-		url: "https://ethereal-psi.vercel.app",
-		logo: "https://ethereal-psi.vercel.app/logo/logo.png",
+		url: "https://ethereal-landing-page.vercel.app",
+		logo: "https://ethereal-landing-page.vercel.app/logo/logo.png",
 		contactPoint: [
 			{
 				"@type": "ContactPoint",
@@ -25,16 +25,16 @@ const DefaultSchema: DefaultSchemaType = {
 	},
 	website: {
 		context: "http://schema.org",
-		id: "https://ethereal-psi.vercel.app#website",
+		id: "https://ethereal-landing-page.vercel.app#website",
 		type: "WebSite",
-		url: "https://ethereal-psi.vercel.app",
+		url: "https://ethereal-landing-page.vercel.app",
 		name: "Ethereal",
 	},
 	webpage: {
 		context: "http://schema.org",
-		id: "https://ethereal-psi.vercel.app#webpage",
+		id: "https://ethereal-landing-page.vercel.app#webpage",
 		type: "WebPage",
-		url: "https://ethereal-psi.vercel.app",
+		url: "https://ethereal-landing-page.vercel.app",
 		name: "Ethereal",
 	},
 };

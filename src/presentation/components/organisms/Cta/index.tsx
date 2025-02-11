@@ -1,15 +1,15 @@
 "use client";
 
 // -- core
+import React, { useRef } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-
-// -- atoms
-import Button from "@atoms/Button";
 
 // -- style
 import style from "./style.module.scss";
+
+// -- atoms
+import Button from "@atoms/Button";
 
 const Cta: React.FC = () => {
 	const container = useRef<HTMLDivElement | null>(null);

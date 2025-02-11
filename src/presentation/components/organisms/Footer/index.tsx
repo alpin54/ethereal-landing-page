@@ -1,29 +1,29 @@
 "use client";
 
 // -- core
+import React from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+
+// -- style
+import style from "./style.module.scss";
 
 // -- atoms
 import SystemIcon from "@atoms/SystemIcon";
 import Magnetic from "@atoms/Magnetic";
 import ButtonRainbow from "@atoms/ButtonRainbow";
 
-// -- style
-import style from "./style.module.scss";
-
 // -- interface
-interface ListData {
-	title: string;
-	to: string;
-}
+import { IListData } from "../Header/type";
 
-const navItems: ListData[] = [
+// -- data navItems
+const navItems: IListData[] = [
 	{ title: "Hero", to: "#hero-banner" },
 	{ title: "Features", to: "#features" },
 	{ title: "CTA", to: "#cta" },
 ];
 
-const sosmedList: ListData[] = [
+// -- data sosmed
+const sosmedList: IListData[] = [
 	{ title: "instagram", to: "https://instagram.com" },
 	{ title: "facebook", to: "https://facebook.com" },
 	{ title: "linkedin", to: "https://linkedin.com" },

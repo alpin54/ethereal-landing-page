@@ -1,22 +1,22 @@
-export interface ContactPoint {
+export interface IContactPoint {
 	"@type": string;
 	telephone: string;
 	contactType: string;
 	areaServed: string;
 }
 
-export interface Organization {
+export interface IOrganization {
 	context: string;
 	id: string;
 	type: string;
 	name: string;
 	url: string;
 	logo: string;
-	contactPoint: ContactPoint[];
+	contactPoint: IContactPoint[];
 	sameAs: string[];
 }
 
-export interface Website {
+export interface IWebsite {
 	context: string;
 	id: string;
 	type: string;
@@ -24,7 +24,7 @@ export interface Website {
 	name: string;
 }
 
-export interface WebPage {
+export interface IWebPage {
 	context: string;
 	id: string;
 	type: string;
@@ -32,8 +32,8 @@ export interface WebPage {
 	name: string;
 }
 
-export interface DefaultSchemaType {
-	organization: Organization;
-	website: Website;
-	webpage: WebPage;
+export interface IDefaultSchemaType {
+	organization: IOrganization;
+	website: IWebsite;
+	webpage: IWebPage;
 }

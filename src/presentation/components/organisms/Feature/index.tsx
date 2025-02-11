@@ -1,5 +1,8 @@
 "use client";
 
+// -- core
+import React from "react";
+
 // -- molecules
 import FeatureItem from "@molecules/FeatureItem";
 
@@ -7,13 +10,10 @@ import FeatureItem from "@molecules/FeatureItem";
 import style from "./style.module.scss";
 
 // -- interface
-interface FeatureList {
-	icon: string;
-	title: string;
-	description: string;
-}
+import { IFeatureList } from "./type";
 
-const feature: FeatureList[] = [
+// -- data
+const feature: IFeatureList[] = [
 	{
 		icon: "design.svg",
 		title: "Otherworldly Design",

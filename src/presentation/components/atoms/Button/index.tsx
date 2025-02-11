@@ -1,6 +1,6 @@
 // -- core
-import Link from "next/link";
 import React from "react";
+import Link from "next/link";
 
 // -- style
 import style from "./style.module.scss";
@@ -9,12 +9,9 @@ import style from "./style.module.scss";
 import Magnetic from "@atoms/Magnetic";
 
 // -- interface
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-	children: React.ReactNode;
-	href?: string;
-}
+import { IButton } from "./type";
 
-const Button: React.FC<ButtonProps> = (props) => {
+const Button: React.FC<IButton> = (props) => {
 	const { children, href, ...rest } = props;
 
 	if (href) {
