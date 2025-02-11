@@ -1,5 +1,7 @@
+import { DefaultSchemaType } from './type';
+
 // --- DefaultSchema
-const DefaultSchema = {
+const DefaultSchema: DefaultSchemaType = {
 	organization: {
 		context: "http://schema.org",
 		id: "https://ethereal-psi.vercel.app#organization",

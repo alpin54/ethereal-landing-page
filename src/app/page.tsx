@@ -3,16 +3,15 @@ import { JSX } from "react";
 
 // -- utils
 import metaTag from "@utils/metaTag";
-import schema from "@utils/schema";
 
 // -- modules
 import Home from "@modules/Home";
 
 // -- metadata
-const metadata = metaTag.dynamic();
-
-// -- schemadata
-const schemadata = schema.dynamic();
+const metadata = metaTag.dynamic({
+	page: "Home",
+	link: "http://localhost:3000",
+});
 
 // ==================
 // HomePage
@@ -22,5 +21,5 @@ const HomePage = (): JSX.Element => {
 	return <Home />;
 };
 
-export { metadata, schemadata };
+export { metadata };
 export default HomePage;

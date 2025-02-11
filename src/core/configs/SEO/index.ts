@@ -1,5 +1,7 @@
+import { DefaultSEOType } from './type';
+
 // --- DefaultSEO
-const DefaultSEO = {
+const DefaultSEO: DefaultSEOType = {
 	title: "Ethereal",
 	description: "Description ethereal",
 	keywords: "Ethereal",
@@ -51,6 +53,7 @@ const DefaultSEO = {
 			items: [57, 60, 72, 76, 114, 120, 144, 152, 180],
 		},
 	},
+	siteCapable: true
 };
 
 export default DefaultSEO;

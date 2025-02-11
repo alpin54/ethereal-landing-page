@@ -2,8 +2,8 @@
 
 .theme {
 	position: fixed;
-	bottom: 32px;
-	left: 32px;
+	bottom: 48px;
+	left: 48px;
 	z-index: zi(theme-mode);
 	width: 56px;
 	height: 56px;
@@ -24,6 +24,22 @@
 	transform: rotate(0deg);
 	@include shadow(0);
 	@include remove-tap-highlight;
+	@include mq(1240px) {
+		left: 40px;
+		bottom: 40px;
+	}
+	@include x-large {
+		left: 32px;
+		bottom: 32px;
+	}
+	@include small {
+		left: 24px;
+		bottom: 24px;
+	}
+	@include retina {
+		left: 16px;
+		bottom: 16px;
+	}
 	:global(.dark) & {
 		@include shadow(1);
 		color: color(white);

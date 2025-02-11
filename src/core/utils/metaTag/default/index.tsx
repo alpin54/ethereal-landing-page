@@ -2,7 +2,7 @@
 import DefaultSEO from "@configs/SEO";
 
 // -- MetaTagDefault
-const MetaTagDefault = () => {
+const MetaTagDefault: React.FC = () => {
 	return (
 		<>
 			{/* -- core */}
