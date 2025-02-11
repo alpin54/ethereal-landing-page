@@ -1,3 +1,6 @@
+// -- tag manager
+import { GoogleAnalytics } from "@next/third-parties/google";
+
 // -- style
 import "@rainbow-me/rainbowkit/styles.css";
 import "@styles/app.scss";
@@ -27,6 +30,9 @@ const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
 			<head>
 				{/* -- THE META TAG -- */}
 				<MetaTagDefault />
+
+				{/* -- THE TAG MANAGER -- */}
+				<GoogleAnalytics gaId="G-CX3GXSHJFB" />
 			</head>
 
 			{/* -- THE BODY -- */}

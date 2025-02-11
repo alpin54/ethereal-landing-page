@@ -195,7 +195,6 @@
 	}
 	@include small {
 		padding: 113px 48px 48px;
-		@include scroll(y);
 	}
 	@include x-small {
 		min-width: initial;
