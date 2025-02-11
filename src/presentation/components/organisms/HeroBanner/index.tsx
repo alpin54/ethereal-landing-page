@@ -29,14 +29,26 @@ const textItems: string[] = [
 
 const HeroBanner: React.FC = () => {
 	const [index, setIndex] = useState<number>(0);
+	const [enableParallax, setEnableParallax] = useState<boolean>(true);
 	const container = useRef<HTMLDivElement | null>(null);
 	const taglineRef = useRef<HTMLHeadingElement | null>(null);
 	const { scrollYProgress } = useScroll({
 		target: container,
 		offset: ["start start", "end start"],
 	});
-	const y = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+	const y = useTransform(scrollYProgress, [0, 1], ["0vh", "50vh"]);
 	const [paddingBottom, setPaddingBottom] = useState<number>(0);
+
+	useEffect(() => {
+		// Disable parallax for mobile devices
+		const handleResize = () => {
+			setEnableParallax(window.innerWidth > 768);
+		};
+
+		handleResize();
+		window.addEventListener("resize", handleResize);
+		return () => window.removeEventListener("resize", handleResize);
+	}, []);
 
 	useEffect(() => {
 		const timer = setTimeout(() => {
@@ -54,17 +66,29 @@ const HeroBanner: React.FC = () => {
 	}, [index]);
 
 	return (
-		<section className={style.banner} id="hero-banner">
+		<section className={style.banner} id="hero-banner" ref={container}>
 			<div className="container">
-				<motion.div style={{ y }} className={style.img}>
-					<LazyLoadImage
-						src="/bg/hero-banner.jpg"
-						alt="hero-banner"
-						className={style.imgEl}
-						width={1400}
-						height={900}
-					/>
-				</motion.div>
+				{enableParallax ? (
+					<motion.div style={{ y }} className={style.img}>
+						<LazyLoadImage
+							src="/bg/hero-banner.jpg"
+							alt="hero-banner"
+							className={style.imgEl}
+							width={1400}
+							height={900}
+						/>
+					</motion.div>
+				) : (
+					<div className={style.img}>
+						<LazyLoadImage
+							src="/bg/hero-banner.jpg"
+							alt="hero-banner"
+							className={style.imgEl}
+							width={1400}
+							height={900}
+						/>
+					</div>
+				)}
 				<div className={style.content}>
 					<h1 className={style.title}>Discover the Future of Decentralized</h1>
 					<h2
