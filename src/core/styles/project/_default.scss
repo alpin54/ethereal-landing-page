@@ -6,7 +6,7 @@ body {
 	font-family: ff(main);
 	font-weight: fw(regular);
 	background-color: color(white);
-	color: color(black);
+	color: color(black, 1);
 	@include font-size(body);
 	transition: background-color 0.3s ease-in-out;
 	&.rm-scroll {
@@ -22,11 +22,11 @@ body {
 	}
 	.light & {
 		background-color: color(white);
-		color: color(black);
+		color: color(black, 1);
 	}
 
 	.dark & {
-		background-color: color(black);
+		background-color: color(black, 1);
 		color: color(white);
 	}
 }

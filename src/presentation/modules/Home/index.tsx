@@ -1,18 +1,25 @@
 "use client";
 
 // -- core
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import { AnimatePresence } from "framer-motion";
+
+// -- molecules
+import Preloader from "@molecules/Preloader";
 
 // -- organisms
 import HeroBanner from "@organisms/HeroBanner";
 import Feature from "@organisms/Feature";
 import Cta from "@organisms/Cta";
 
+// -- type
 type LocomotiveScrollInstance = {
 	destroy: () => void;
 };
 
 const Home: React.FC = () => {
+	const [isLoading, setIsLoading] = useState(true);
+
 	useEffect(() => {
 		let locomotiveScroll: LocomotiveScrollInstance | null = null;
 
@@ -25,6 +32,7 @@ const Home: React.FC = () => {
 				});
 
 				setTimeout(() => {
+					setIsLoading(false);
 					document.body.style.cursor = "default";
 					window.scrollTo(0, 0);
 				}, 1000);
@@ -44,6 +52,9 @@ const Home: React.FC = () => {
 
 	return (
 		<>
+			<AnimatePresence mode="wait">
+				{isLoading && <Preloader />}
+			</AnimatePresence>
 			<HeroBanner />
 			<Feature />
 			<Cta />

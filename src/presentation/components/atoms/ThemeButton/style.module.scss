@@ -43,7 +43,7 @@
 	:global(.dark) & {
 		@include shadow(1);
 		color: color(white);
-		background-color: color(black);
+		background-color: color(black, 1);
 	}
 }
 .sun,

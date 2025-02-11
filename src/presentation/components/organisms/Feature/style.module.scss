@@ -7,7 +7,7 @@
 	padding: 128px 0;
 	background-color: color(grey, 2);
 	:global(.dark) & {
-		background-color: color(grey, 5);
+		background-color: color(black, 2);
 	}
 	@include large {
 		padding: 112px 0;

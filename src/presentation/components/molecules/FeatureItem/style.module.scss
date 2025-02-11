@@ -7,7 +7,7 @@
 	background-color: color(white);
 	@include radius(4);
 	:global(.dark) & {
-		background-color: color(black);
+		background-color: color(black, 1);
 	}
 	padding: 40px;
 	height: 100%;

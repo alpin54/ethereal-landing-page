@@ -5,13 +5,16 @@
 // colors
 $colors: (
 	primary: #ff5caa,
-	black: #000,
+	black: (
+		1: #000,
+		2: #1a1a1a,
+		3: #141516,
+	),
 	grey: (
 		1: #828282,
 		2: #ebe6e2,
 		3: #d9d1ca,
 		4: #ffffff80,
-		5: #1a1a1a,
 	),
 	sun: #f2c94c,
 	white: #fff,

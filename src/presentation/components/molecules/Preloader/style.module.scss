@@ -1,0 +1,49 @@
+@import "src/core/styles/_assets.scss";
+
+.introduction {
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: fixed;
+	z-index: zi(introduction);
+	background-color: color(white);
+	:global(.dark) & {
+		background-color: color(black, 3);
+	}
+	svg {
+		position: absolute;
+		top: 0;
+		width: 100%;
+		height: calc(100% + 300px);
+		path {
+			fill: color(white);
+			:global(.dark) & {
+				fill: color(black, 3);
+			}
+		}
+	}
+	p {
+		display: flex;
+		font-size: 42px;
+		align-items: center;
+		position: absolute;
+		z-index: zi(introduction-text);
+		color: color(black, 1);
+		:global(.dark) & {
+			color: color(white);
+		}
+		span {
+			display: block;
+			width: 10px;
+			height: 10px;
+			border-radius: 50%;
+			margin-right: 10px;
+			background-color: color(black, 3);
+			:global(.dark) & {
+				background-color: color(white);
+			}
+		}
+	}
+}
