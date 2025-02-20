@@ -55,7 +55,11 @@ const ThemeButton: React.FC = () => {
 	};
 
 	return (
-		<button className={style.theme} onClick={toggleTheme}>
+		<button
+			className={style.theme}
+			onClick={toggleTheme}
+			aria-label="theme button"
+		>
 			<span className={style.sun} ref={sunRef}>
 				<SystemIcon name="sun" />
 			</span>

@@ -166,6 +166,7 @@ const Header: React.FC = () => {
 												target="_blank"
 												rel="noopener noreferrer"
 												className={`${style.socialLink} ${val.title}`}
+												aria-label={val.title}
 											>
 												<SystemIcon name={val.title} />
 											</a>
