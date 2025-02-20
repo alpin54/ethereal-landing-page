@@ -1,22 +1,28 @@
-// --- library
-import axios from "axios";
+// -- core
+import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
 
-// --- httpRequest
-const httpRequest = async (param) => {
-	let config = { ...param };
+// -- type
+import { IHttpResponse } from "./type";
 
-	if (param.token) {
+// -- httpRequest
+const httpRequest = async <T>(
+	param: AxiosRequestConfig
+): Promise<IHttpResponse<T>> => {
+	let config: AxiosRequestConfig = { ...param };
+
+	if (param.headers && param.headers.token) {
 		config = {
 			...param,
 			headers: {
+				...param.headers,
 				Authorization: "Bearer " + localStorage.getItem("token"),
 			},
 		};
 	}
 
 	return await axios(config)
-		.then((response) => {
-			return { data: response.data, ready: true, error: false };
+		.then((response: AxiosResponse<T>) => {
+			return { data: response.data, ready: true, error: false as const };
 		})
 		.catch((error) => {
 			if (error.response !== undefined) {
@@ -26,9 +32,7 @@ const httpRequest = async (param) => {
 					error: {
 						status: error.response.status,
 						type: error.name,
-						message: error.response?.data?.message
-							? error.response.data.message
-							: error.message,
+						message: error.message,
 					},
 				};
 			} else {

@@ -1,10 +1,13 @@
-// --- core
+// -- core
 import { useState, useEffect } from "react";
 
-const useFirstLoad = (model) => {
-	const [ready, setReady] = useState(false);
-	const [data, setData] = useState(null);
-	const [error, setError] = useState(false);
+// -- type
+import { IModelResponse } from "./type";
+
+const useFirstLoad = <T>(model: Promise<IModelResponse<T>>) => {
+	const [ready, setReady] = useState < boolean > false;
+	const [data, setData] = (useState < T) | (null > null);
+	const [error, setError] = useState < boolean > false;
 
 	const handleFetch = async () => {
 		const { data: dataResponse, error: errorResponse } = await model;
