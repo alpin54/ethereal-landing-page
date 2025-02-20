@@ -9,7 +9,7 @@ import Home from "@modules/Home";
 
 // -- metadata
 const metadata = metaTag.dynamic({
-	link: "http://localhost:3000",
+	link: "https://ethereal-landing-page.vercel.app",
 });
 
 // ==================
